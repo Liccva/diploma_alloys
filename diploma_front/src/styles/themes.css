@@ -1,0 +1,173 @@
+/* ===== AlloyVault - Themes ===== */
+
+/* Тёмная тема (по умолчанию) */
+:root,
+[data-theme="dark"] {
+  --metal-dark: #0a0e17;
+  --metal-mid: #1a1f2e;
+  --metal-light: #2a3040;
+  --alloy-gold: #c9a84c;
+  --alloy-silver: #a8b4c0;
+  --alloy-bronze: #cd7f32;
+  --alloy-titanium: #878f99;
+  --alloy-chrome: #d4d9e0;
+  --crystal-blue: #4a90d9;
+  --oxide-red: #c4554d;
+  --graphite: #2c3e50;
+  --neon-accent: #00e5ff;
+  --molten-glow: #ff6b35;
+
+  /* Фоны */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #1a1f2e;
+  --bg-card: linear-gradient(135deg, rgba(26, 31, 46, 0.95), rgba(10, 14, 23, 0.98));
+  --bg-input: rgba(10, 14, 23, 0.8);
+  --bg-hover: rgba(201, 168, 76, 0.05);
+
+  /* Текст */
+  --text-primary: #d4d9e0;
+  --text-secondary: #a8b4c0;
+  --text-muted: #878f99;
+  --text-accent: #c9a84c;
+
+  /* Границы */
+  --border-primary: rgba(201, 168, 76, 0.15);
+  --border-input: rgba(168, 180, 192, 0.15);
+  --border-hover: rgba(201, 168, 76, 0.3);
+
+  /* Тени */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Светлая тема */
+[data-theme="light"] {
+  --metal-dark: #f8fafc;
+  --metal-mid: #f1f5f9;
+  --metal-light: #e2e8f0;
+  --alloy-gold: #2563eb;
+  --alloy-silver: #475569;
+  --alloy-bronze: #1d4ed8;
+  --alloy-titanium: #64748b;
+  --alloy-chrome: #1e293b;
+  --crystal-blue: #3b82f6;
+  --oxide-red: #dc2626;
+  --graphite: #334155;
+  --neon-accent: #0ea5e9;
+  --molten-glow: #f97316;
+
+  /* Фоны */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --bg-hover: rgba(37, 99, 235, 0.05);
+
+  /* Текст */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-accent: #2563eb;
+
+  /* Границы */
+  --border-primary: rgba(37, 99, 235, 0.15);
+  --border-input: #e2e8f0;
+  --border-hover: rgba(37, 99, 235, 0.3);
+
+  /* Тени */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Переключатель темы */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-hover);
+  color: var(--text-accent);
+}
+
+/* ===== Theme Slider ===== */
+.theme-slider {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.theme-slider-track {
+  position: relative;
+  width: 56px;
+  height: 28px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.theme-slider.active .theme-slider-track {
+  background: var(--bg-hover);
+  border-color: var(--text-accent);
+}
+
+.theme-slider-icon {
+  font-size: 12px;
+  z-index: 1;
+  transition: all 0.3s ease;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.theme-slider.active .theme-slider-icon.sun {
+  opacity: 1;
+}
+
+.theme-slider:not(.active) .theme-slider-icon.moon {
+  opacity: 1;
+}
+
+.theme-slider-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  background: var(--text-accent);
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.theme-slider.active .theme-slider-thumb {
+  left: 30px;
+  background: #2563eb;
+}
+
+.theme-slider:hover .theme-slider-track {
+  border-color: var(--border-hover);
+}
+
+.theme-slider:hover .theme-slider-thumb {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}

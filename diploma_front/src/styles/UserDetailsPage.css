@@ -1,0 +1,230 @@
+/* UserDetailsPage Styles */
+
+.avatar-large {
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #3b5bdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  overflow: hidden;
+  border: 3px solid #e8eaf6;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  user-select: none;
+}
+
+/* Avatar Edit */
+.avatar-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-edit-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar-edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: #3b5bdb;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.avatar-edit-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* Profile Card */
+.profile-card {
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.profile-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-info h3 {
+  margin: 0 0 8px;
+}
+
+.profile-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* Badges */
+.badge {
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-role {
+  background: #e8eaf6;
+  color: #3b5bdb;
+}
+
+.badge-blocked {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.badge-me {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge-count {
+  background: #f0f4ff;
+  color: #3b5bdb;
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+.info-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.info-label {
+  color: #888;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-weight: 500;
+}
+
+.info-value-empty {
+  font-weight: 400;
+  color: #bbb;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3b5bdb;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Predictions */
+.predictions-card {
+  padding: 20px;
+}
+
+.predictions-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.predictions-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.td-value {
+  font-weight: 600;
+}
+
+.td-muted {
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.empty-text {
+  color: #bbb;
+}
+
+/* Page header */
+.page-header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.page-header h2 {
+  margin: 0;
+  flex: 1;
+}
+
+.page-header-actions {
+  display: flex;
+  gap: 8px;
+}

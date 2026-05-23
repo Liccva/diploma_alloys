@@ -1,0 +1,564 @@
+/* ===== AlloyVault - Patents Management Pages ===== */
+
+.patents-page {
+  padding: 0;
+}
+
+.page-header .btn-primary {
+  padding: 6px 14px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  width: auto;
+  min-width: unset;
+  white-space: nowrap;
+}
+
+.page-header .btn-secondary:first-child,
+.btn-back {
+  padding: 6px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  width: auto;
+  min-width: unset;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.page-header .btn-back {
+  margin-right: 8px;
+}
+
+/* Поиск */
+.patents-filters {
+  margin-bottom: 24px;
+}
+
+.patents-filters input {
+  width: 100%;
+  padding: 10px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: 2px;
+  color: var(--text-primary);
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.patents-filters input:focus {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.patents-filters input::placeholder {
+  color: var(--text-muted);
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+/* Пагинация */
+.pagination-info {
+  padding: 12px 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid var(--border-primary);
+  text-align: right;
+  opacity: 0.7;
+}
+
+/* Ссылка на патент */
+.patent-link {
+  color: var(--text-accent);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.patent-link:hover {
+  text-decoration: underline;
+}
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-hover), transparent);
+}
+
+.card-header {
+  padding: 20px 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-primary);
+  width: 100%;
+}
+
+.card-body {
+  padding: 24px;
+}
+
+/* Info rows */
+.info-row {
+  display: flex;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  min-width: 180px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.info-value a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+}
+
+/* Authors list */
+.authors-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: authors;
+}
+
+.authors-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  counter-increment: authors;
+  transition: all 0.3s ease;
+}
+
+.authors-list li::before {
+  content: counter(authors);
+  width: 24px;
+  height: 24px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-accent);
+  font-family: 'JetBrains Mono', monospace;
+  flex-shrink: 0;
+}
+
+.authors-list li:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
+}
+
+.patent-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  white-space: pre-wrap;
+}
+
+/* PDF row */
+.pdf-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+}
+
+.pdf-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.pdf-info {
+  flex: 1;
+}
+
+.pdf-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.pdf-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  color: var(--text-accent);
+  border-radius: 2px;
+}
+
+.badge-registered {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.badge-me {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+}
+
+.badge-count {
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  color: var(--text-accent);
+  min-width: 24px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--crystal-blue);
+  border-radius: 2px;
+}
+
+/* Author row */
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.author-row:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
+}
+
+.author-order {
+  width: 28px;
+  height: 28px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-accent);
+  font-family: 'JetBrains Mono', monospace;
+  flex-shrink: 0;
+}
+
+.author-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.author-registered {
+  font-size: 10px;
+  color: #22c55e;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Author input section */
+.author-input-section {
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+.author-input-section label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* PDF drop zone */
+.pdf-dropzone {
+  border: 2px dashed var(--border-input);
+  border-radius: 2px;
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--bg-input);
+  transition: all 0.3s ease;
+}
+
+.pdf-dropzone:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
+}
+
+.pdf-dropzone.dragging {
+  border-color: var(--text-accent);
+  background: var(--bg-hover);
+}
+
+.pdf-dropzone-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.pdf-dropzone-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.pdf-dropzone input[type="file"] {
+  display: none;
+}
+
+/* PDF file info */
+.pdf-file-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 2px;
+}
+
+.pdf-file-info .pdf-details .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.pdf-file-info .pdf-details .link {
+  font-size: 11px;
+  color: #22c55e;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Form section */
+.form-section-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.form-section-title {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 32px 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.form-hint-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-top: 8px;
+  opacity: 0.7;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Компактная кнопка удаления */
+.author-row .btn-danger.btn-sm {
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 1;
+  min-width: unset;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Date input */
+input[type="date"].form-control::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+input[type="date"].form-control:hover::-webkit-calendar-picker-indicator {
+  opacity: 0.8;
+}
+
+/* Actions */
+.actions .btn {
+  min-width: 75px;
+  justify-content: center;
+}
+
+.alloys-actions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-primary);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty-alloys-inline {
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.empty-alloys-inline p {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .info-label {
+    min-width: auto;
+  }
+  .pdf-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .patent-form-container {
+    max-width: 100%;
+  }
+  .form-section-block {
+    padding: 16px;
+  }
+  .author-input-fields {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .mode-toggle {
+    flex-direction: column;
+  }
+  .author-row {
+    flex-wrap: wrap;
+  }
+  .pdf-file-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-header {
+    padding: 16px 16px 0;
+  }
+  .card-body {
+    padding: 16px;
+  }
+}

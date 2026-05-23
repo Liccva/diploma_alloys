@@ -1,0 +1,181 @@
+/* ===== AlloyVault - Reports Page ===== */
+.reports-page { padding: 0; }
+
+.reports-page .page-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 32px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.reports-page .page-header h2 {
+  font-size: 28px; font-weight: 300; color: var(--text-primary);
+  letter-spacing: 3px; text-transform: uppercase; margin: 0;
+}
+
+.reports-page .stats-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px; margin-bottom: 20px;
+}
+
+.reports-page .stat-card {
+  background: var(--bg-card); border: 1px solid var(--border-primary);
+  border-radius: 2px; padding: 20px 16px; text-align: center; transition: all 0.3s ease;
+}
+
+.reports-page .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+
+.reports-page .stat-number {
+  font-size: 36px; font-weight: 200; color: var(--text-accent);
+  font-family: 'JetBrains Mono', monospace; letter-spacing: 2px; margin: 0 0 8px 0; line-height: 1;
+}
+
+.reports-page .stat-card h3 {
+  font-size: 12px; font-weight: 400; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase; margin: 0;
+}
+
+.reports-page .btn-link {
+  background: none; border: none; color: var(--text-accent); cursor: pointer;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.5px; padding: 0;
+  text-decoration: none; transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+}
+
+.reports-page .btn-link:hover { text-decoration: underline; }
+
+.reports-page .reports-grid,
+.reports-page .reports-grid-3 {
+  display: grid; gap: 16px; margin-bottom: 20px;
+}
+
+.reports-page .reports-grid { grid-template-columns: 1fr 1fr; }
+.reports-page .reports-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.reports-page h4 {
+  font-size: 14px; font-weight: 400; color: var(--text-secondary);
+  letter-spacing: 1px; margin: 0 0 12px 0; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.reports-page .table td { padding: 10px 16px; }
+
+.reports-page .text-muted { color: var(--text-muted); opacity: 0.7; font-size: 13px; letter-spacing: 0.5px; margin-bottom: 16px; }
+
+@media print {
+  .app-header, .sidebar, .app-footer, .btn, .admin-tabs, .page-header .btn { display: none !important; }
+  .reports-page { background: white; color: black; }
+  .reports-page .data-card { background: white; border: 1px solid #ccc; break-inside: avoid; }
+}
+
+@media (max-width: 768px) {
+  .reports-page .reports-grid,
+  .reports-page .reports-grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .reports-page .stats-cards { grid-template-columns: 1fr; }
+  .reports-page .stat-number { font-size: 28px; }
+}
+
+/* Печать / PDF */
+@media print {
+  /* Скрываем всё, кроме отчёта */
+  .app-header,
+  .app-footer,
+  .sidebar,
+  .btn,
+  .admin-tabs,
+  .page-header .btn-secondary,
+  .theme-toggle,
+  .navbar-menu {
+    display: none !important;
+  }
+
+  /* Показываем только контент */
+  .reports-page {
+    background: white !important;
+    color: black !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .reports-page * {
+    color: black !important;
+    background: white !important;
+    box-shadow: none !important;
+    border-color: #ccc !important;
+    text-shadow: none !important;
+  }
+
+  .reports-page .data-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    margin-bottom: 16px !important;
+    padding: 16px !important;
+  }
+
+  .reports-page .stat-card {
+    border: 1px solid #ddd !important;
+    padding: 12px !important;
+  }
+
+  .reports-page .stat-number {
+    font-size: 24px !important;
+    color: #333 !important;
+  }
+
+  .reports-page .stat-card h3 {
+    color: #666 !important;
+    font-size: 11px !important;
+  }
+
+  .reports-page .table {
+    font-size: 11px !important;
+  }
+
+  .reports-page .table th {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+    border-bottom: 2px solid #999 !important;
+  }
+
+  .reports-page .table td {
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  .reports-page h3,
+  .reports-page h4 {
+    color: #333 !important;
+    border-bottom-color: #999 !important;
+  }
+
+  .reports-page .page-header {
+    border-bottom: 2px solid #333 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .reports-page .page-header h2 {
+    color: #111 !important;
+    font-size: 24px !important;
+  }
+
+  .reports-page .btn-link {
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+
+  /* Убираем фон у body */
+  body {
+    background: white !important;
+  }
+
+  /* Показываем URL ссылок */
+  a[href]:after {
+    content: none !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}

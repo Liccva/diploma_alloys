@@ -1,0 +1,94 @@
+/* ===== AlloyVault Footer ===== */
+.app-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-primary);
+  padding: 16px 0;
+  position: relative;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer-right {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-version {
+  font-size: 9px;
+  color: var(--text-accent);
+  opacity: 0.5;
+  letter-spacing: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--text-accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--text-accent);
+    opacity: 0.7;
+  }
+  50% {
+    box-shadow: 0 0 15px var(--text-accent);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-inner {
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  .app-footer {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-inner {
+    font-size: 10px;
+  }
+  .app-footer {
+    padding: 12px 0 65px;
+  }
+}

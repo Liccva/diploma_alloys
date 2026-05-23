@@ -1,0 +1,658 @@
+/* ========================
+   User Edit Page
+   ======================== */
+.user-edit-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.user-edit-page .page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.user-edit-page .page-header h2 {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.user-edit-page .card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Секция */
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+/* Сетка формы */
+.user-edit-page .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.user-edit-page .form-group {
+  margin-bottom: 16px;
+}
+
+.user-edit-page .form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.user-edit-page .form-control {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: 2px;
+  color: var(--text-primary);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.user-edit-page .form-control:focus {
+  border-color: var(--text-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.user-edit-page .form-control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.user-edit-page select.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232563eb' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.user-edit-page select.form-control option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Обязательное поле */
+.required-star {
+  color: var(--oxide-red);
+  margin-left: 3px;
+}
+
+/* Ошибка поля */
+.field-error {
+  display: block;
+  color: var(--oxide-red);
+  font-size: 11px;
+  margin-top: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Уведомления */
+.notice {
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.notice-error {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: var(--oxide-red);
+}
+
+.notice-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+/* Статус аккаунта */
+.status-card {
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.status-card.active {
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.status-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.status-title.active {
+  color: #22c55e;
+}
+
+.status-title.inactive {
+  color: var(--oxide-red);
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.status-indicator::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.status-indicator.active {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-indicator.active::before {
+  background: #22c55e;
+}
+
+.status-indicator.inactive {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  color: var(--oxide-red);
+}
+
+.status-indicator.inactive::before {
+  background: var(--oxide-red);
+}
+
+.status-description {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+/* Кнопка назад */
+.btn-back {
+  padding: 6px 12px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  width: auto;
+  min-width: unset;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Кнопки действий */
+.user-edit-page .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-edit-page {
+    max-width: 100%;
+  }
+
+  .user-edit-page .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .user-edit-page .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .user-edit-page .form-actions {
+    flex-direction: column;
+  }
+
+  .user-edit-page .form-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-edit-page .page-header h2 {
+    font-size: 22px;
+  }
+}
+
+/* ========================
+   User Details Page
+   ======================== */
+.page-container {
+  padding: 0;
+}
+
+.page-container .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.page-container .page-header h2 {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Карточка профиля */
+.profile-card {
+  padding: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.profile-header {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h3 {
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+}
+
+.profile-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+/* Бейджи */
+.badge-role {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  color: var(--text-accent);
+  border-radius: 2px;
+}
+
+.badge-blocked {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: var(--oxide-red);
+  border-radius: 2px;
+}
+
+.badge-me {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #22c55e;
+  border-radius: 2px;
+}
+
+.badge-count {
+  display: inline-block;
+  padding: 4px 8px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-hover);
+  color: var(--text-accent);
+  min-width: 24px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* Инфо-сетка */
+.profile-info .info-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.profile-info .info-row {
+  display: flex;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.profile-info .info-row:last-child {
+  border-bottom: none;
+}
+
+.profile-info .info-label {
+  min-width: 160px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.profile-info .info-value {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.profile-info .info-value-empty {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+/* Статистика */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stats-grid .stat-card {
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--text-accent);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Прогнозы */
+.predictions-card {
+  padding: 24px;
+}
+
+.predictions-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.predictions-header h3 {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.predictions-header .btn-outline {
+  margin-left: auto;
+}
+
+/* Таблица */
+.td-value {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+.td-muted {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Пустое состояние */
+.empty-state {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.empty-text {
+  color: var(--text-muted);
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Ошибка */
+.error-container {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--bg-card);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 2px;
+}
+
+.error-container h2 {
+  color: var(--oxide-red);
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.error-container p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.error-container .form-actions {
+  display: flex;
+  justify-content: center;
+}
+
+/* Аватар */
+.avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--bg-hover);
+  border: 2px solid var(--border-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  color: var(--text-accent);
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1;
+}
+
+.avatar-edit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-edit-wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.avatar-edit-wrapper:hover {
+  opacity: 0.8;
+}
+
+.avatar-edit-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* Таблица */
+.table-container {
+  overflow-x: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2px;
+}
+
+.table-footer {
+  padding: 12px 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid var(--border-primary);
+  text-align: right;
+  opacity: 0.7;
+}
+
+.table-footer a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+
+.table-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-badges {
+    justify-content: center;
+  }
+
+  .profile-info .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .profile-info .info-label {
+    min-width: auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .predictions-header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-info h3 {
+    font-size: 20px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .avatar-large {
+    width: 60px;
+    height: 60px;
+  }
+}

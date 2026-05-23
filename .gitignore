@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+diploma_back/venv/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+diploma_back/.idea/
+diploma_front/.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+application.db
+diploma_back/application.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Frontend (React)
+/node_modules/
+/diploma_front/node_modules/
+/build
+/diploma_front/build/
+/coverage
+.pnp
+.pnp.js
+
+# Backend uploads & temp
+/uploads/
+/temp_charts/
+diploma_back/uploads/
+
+# ML models (если не хотите хранить большие файлы в Git)
+# *.pkl
+# ml_models/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project specific
+*.pid
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
